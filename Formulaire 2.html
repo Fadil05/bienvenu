@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inscription</title>
+  </head>
+  <body>
+    <h1>Inscription</h1>
+    <form>
+      <label for="nom">Quel est votre nom?</label>
+      <input type="text" id="nom" name="nom"><br><br>
+      <label for="prenom">Quel est votre prénom?</label>
+      <input type="text" id="prenom" name="prenom"><br><br>
+      <label for="email">Quel est votre e-mail?</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="choix">Quel est votre plus grand désir?</label>
+      <select id="choix" name="choix">
+        <option value="Etre riche">Etre riche</option>
+        <option value="Etre célèbre">Etre célèbre</option>
+        <option value="Etre encore plus intelligent">Etre encore plus intelligent</option>
+        <option value="Autre">Autre (précisez ci-dessous)</option>
+      </select><br><br>
+      <label for="autre" id="autre-label" style="display: none;">Si autre, précisez :</label>
+      <input type="text" id="autre" name="autre" style="display: none;"><br><br>
+      <input type="submit" value="S'inscrire">
+    </form>
+
+    <script>
+      const select = document.getElementById('choix');
+      const autreInput = document.getElementById('autre');
+      const autreLabel = document.getElementById('autre-label');
+
+      select.addEventListener('change', () => {
+        if (select.value === 'Autre') {
+          autreInput.style.display = 'block';
+          autreLabel.style.display = 'block';
+        } else {
+          autreInput.style.display = 'none';
+          autreLabel.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

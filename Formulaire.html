@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulaire d'inscription 1</title>
+  </head>
+  <body>
+    <h1>Formulaire d'inscription 1</h1>
+    <form>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom"><br><br>
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom"><br><br>
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="choix">Choix :</label>
+      <select id="choix" name="choix">
+        <option value="Etre riche">Etre riche</option>
+        <option value="Etre célèbre">Etre célèbre</option>
+        <option value="Etre plus intelligent">Etre plus intelligent</option>
+        <option value="Autre">Autre (précisez)</option>
+      </select><br><br>
+      <label for="autre">Si autre, précisez :</label>
+      <input type="text" id="autre" name="autre" disabled><br><br>
+      <input type="submit" value="S'inscrire">
+    </form>
+
+    <script>
+      const select = document.getElementById('choix');
+      const autreInput = document.getElementById('autre');
+
+      select.addEventListener('change', () => {
+        if (select.value === 'Autre') {
+          autreInput.disabled = false;
+        } else {
+          autreInput.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
